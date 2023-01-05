@@ -1,71 +1,115 @@
+<html>
+<head>
+    <title>Countries Form</title>
+</head>
+<body>
 
-<label for="country">Country:</label><br>
-<input type="text" id = "addCountry" ><br>
-<button onclick="addCountries(document.getElementById('addCountry').value)" >
-    Add
+  <div style="text-align:center">
+    <h1>Typescript Exercise</h1>
+    <div class="countriess"> 
+<input type="text" id = "addCountry" placeholder="Country" ><br>
+</div>
+
+<div class="countriess"> 
+<input type="text" id = "addCity" placeholder="City"><br>
+</div>
+
+<div class="countriess"> 
+<input type="number" id = "addCity1" placeholder="Population" ><br>
+<button onclick="addCountries(document.getElementById('addCountry').value);addCity(document.getElementById('addCity').value);addPopulation(document.getElementById('addCity1').value) " >
+  Add
 </button><br>
-
-<label for="city">City:</label><br>
-<input type="text" id = "addCity" ><br>
-<button onclick="addCity(document.getElementById('addCity').value)" >
-    Add
-</button><br>
-
-<label for="population">Population:</label><br>
-<input type="number" id = "addCity1" ><br>
-<button onclick="addPopulation(document.getElementById('addCity1').value)" >
-    Add
-</button><br>
-
-
-
-
-
-<div id = "myList">
-
-
 </div>
 
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
 
+
+
+
+
+
+<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for Countries..">
+  
 <ul id="myUL">
   <ul><a href="#">Japan</a></ul>
   <ul><a href="#">Philippines</a></ul>
-
+  
   <ul><a href="#">Malaysia</a></ul>
   <ul><a href="#">China</a></ul>
-
+  
   <ul><a href="#">Italy</a></ul>
   <ul><a href="#">USA</a></ul>
   <ul><a href="#">Amerika</a></ul>
 </ul>
 
 <script>
-    function myFunction() {
-      // Declare variables
-      var input, filter, ul, li, a, i, txtValue;
-      input = document.getElementById('myInput');
-      filter = input.value.toUpperCase();
-      ul = document.getElementById("myUL");
-      li = ul.getElementsByTagName('ul');
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('ul');
     
-      // Loop through all list items, and hide those who don't match the search query
-      for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        txtValue = a.textContent || a.innerText;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          li[i].style.display = "";
-        } else {
-          li[i].style.display = "none";
-        }
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
       }
     }
-    </script>
+  }
+</script> -->
+
+    <input id="searchbar" onkeyup="search_animal()" type="text"
+    name="search" placeholder="Search animals..">
+    
+    <ul id = "myList">
+    </ul>
+    <!-- ordered list -->
+    <ol id='myList'>
+        <li class="animals">Cat</li>
+        <li class="animals">Dog</li>
+        <li class="animals">Elephant</li>
+        <li class="animals">Fish</li>
+        <li class="animals">Gorilla</li>
+        <li class="animals">Monkey</li>
+        <li class="animals">Turtle</li>
+        <li class="animals">Whale</li>
+        <li class="animals">Aligator</li>
+        <li class="animals">Donkey</li>
+        <li class="animals">Horse</li>
+    </ol>
+<script>
+
+  function search_animal() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('countriess');
+    
+    for (i = 0; i < x.length; i++) { 
+      if (!x[i].innerHTML.toLowerCase().includes(input)) {
+        x[i].style.display="none";
+          }
+          else {
+            x[i].style.display="list-item";                 
+          }
+        }
+      }
+      
+      </script>
 
 
 
 
+
+
+
+
+</div>
 
 <script> var exports = {"__esModule" : { value: true }} </script>
 <script src="./index.js"></script>

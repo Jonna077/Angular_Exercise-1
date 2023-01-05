@@ -71,3 +71,80 @@ const displayPopulation = () => {
     });
 };
 exports.displayPopulation = displayPopulation;
+
+function ISBN10(isbn) {
+    var len = isbn.length;
+    
+    if (len !== 10) {
+        return false;
+    }
+    
+    return isbn.split('')
+        .map(function (num, index) {
+           return (num === 'X' && index === len - 1 ? 10 : parseInt(num, 10)) * (index + 1); 
+        })
+        .reduceRight(function (a, b) {
+            return a + b;
+        }, 0) % 11 === 0;
+  }
+   
+  let isbn = "1112223339X";
+
+  if (ISBN10(isbn))
+   console.log(isbn+" -> True");
+  else
+  console.log(isbn+" -> False");
+
+function moveZerosToEnd(arr) {
+    for(let i= arr.length-1; i>=0; i--){
+       if(arr[i]===0){
+          arr.push(0) 
+          arr.splice(i,1)
+       }
+    }
+    return arr
+ }
+ console.log(moveZerosToEnd([false, 1, 0, 1, 2, 0, 1, 3, 'a']))
+
+
+
+        function Firstconvert(s) {
+            
+            
+            return s.split(' ').map(word=>
+                
+                word.split('').map(letter=>{
+                    if(letter === 'z' ) return 'A'
+                    if(letter === '0')  return '0'
+                    let x = parseInt(letter) ? letter : String.fromCharCode(letter.charCodeAt(letter.length - 1) + 1)
+                    if(/([aeiou])/g.test(x)) return x.toLowerCase()
+                    
+                    return x
+                   
+            }).join('')
+            
+            ).join(' ')
+          }
+        
+
+       
+        function Secondconvert(s) {
+            s= s.toLowerCase()
+            
+            return s.split(' ').map(word=>
+                
+                word.split('').map(letter=>{
+                    if(letter === 'z' ) return 'A'
+                    if(letter === '0')  return '0'
+                    let x = parseInt(letter) ? letter : String.fromCharCode(letter.charCodeAt(letter.length - 1) + 1)
+                    if(/([aeiou])/g.test(x)) return x.toUpperCase()
+                    return x
+                   
+            }).join('')
+            
+            ).join(' ')
+          }
+          console.log("Change it up! from Cat30 -> "+Firstconvert('Cat30')+" -> "+Secondconvert('Cat30'))
+
+
+    
