@@ -1,0 +1,71 @@
+
+<label for="country">Country:</label><br>
+<input type="text" id = "addCountry" ><br>
+<button onclick="addCountries(document.getElementById('addCountry').value)" >
+    Add
+</button><br>
+
+<label for="city">City:</label><br>
+<input type="text" id = "addCity" ><br>
+<button onclick="addCity(document.getElementById('addCity').value)" >
+    Add
+</button><br>
+
+<label for="population">Population:</label><br>
+<input type="number" id = "addCity1" ><br>
+<button onclick="addPopulation(document.getElementById('addCity1').value)" >
+    Add
+</button><br>
+
+
+
+
+
+<div id = "myList">
+
+
+</div>
+
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<ul id="myUL">
+  <ul><a href="#">Japan</a></ul>
+  <ul><a href="#">Philippines</a></ul>
+
+  <ul><a href="#">Malaysia</a></ul>
+  <ul><a href="#">China</a></ul>
+
+  <ul><a href="#">Italy</a></ul>
+  <ul><a href="#">USA</a></ul>
+  <ul><a href="#">Amerika</a></ul>
+</ul>
+
+<script>
+    function myFunction() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('myInput');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("myUL");
+      li = ul.getElementsByTagName('ul');
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+    </script>
+
+
+
+
+
+<script> var exports = {"__esModule" : { value: true }} </script>
+<script src="./index.js"></script>
